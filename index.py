@@ -6,10 +6,9 @@ app = Flask(__name__)
 
 
 @app.route('/')
-@app.route('/index')
-def index():
-    user = "Ученик Яндекс.Лицея"
-    return render_template('index.html', title='Заготовка')
+@app.route('/training/<prof>')
+def index(prof):
+    return render_template('index.html', title=prof, speciality=prof)
 
 
 if __name__ == '__main__':

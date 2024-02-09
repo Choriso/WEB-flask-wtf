@@ -1,5 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h4> И на Марсе будут яблони цвести! </h4>
+    {% if speciality == "инженер" or speciality == "строитель" %}
+<div><h5>Инженерные тренажеры</h5></div>
+        <img src="{{url_for('static', filename='img/spaceship_1.png' )}}"
+           alt="здесь должна была быть картинка, но не нашлась">
+    {% else %}
+<div><h5>Научные симуляторы</h5></div>
+         <img src="{{url_for('static', filename='img/spaceship_2.webp')}}"
+           alt="здесь должна была быть картинка, но не нашлась">
+    {% endif %}
 {% endblock %}
